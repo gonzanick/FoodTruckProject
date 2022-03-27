@@ -1,7 +1,8 @@
 package com.skilldistillery.foodtruck.entity;
 
 public class FoodTruck {
-	private static int nextTruckId = 0;
+	private static int nextTruckId = 1;
+	private int truckID;
 	
 	private String name;
 	private String foodType;
@@ -10,20 +11,25 @@ public class FoodTruck {
 	public FoodTruck() {  }
 	
 	public FoodTruck(String name, String foodType, int rating) {
-		setNextTruckId(nextTruckId);
+		
 		this.name = name;
 		this.foodType = foodType;
 		this.rating = rating;
+		this.truckID = getNextTruckId();
 		nextTruckId++;
 	}
+	
+	public int getTruckId() {
+		return truckID;
+	}
 
-	public static int getNextTruckId() {
+	public int getNextTruckId() {
 		return nextTruckId;
 	}
 
-	private static void setNextTruckId(int nextTruckId) {
-		FoodTruck.nextTruckId = nextTruckId;
-	}
+//	private void setNextTruckId(int nextTruckId) {
+//		FoodTruck.nextTruckId = nextTruckId;
+//	}
 
 	public String getName() {
 		return name;
@@ -51,7 +57,7 @@ public class FoodTruck {
 
 	@Override
 	public String toString() {
-		return "FoodTruck name is " + name + ", food type is " + foodType + ", and their rating is " + rating + "]";
+		return "FoodTruck name is " + name + " ID: " + truckID + ", food type is " + foodType + ", and their rating is " + rating;
 	}
 	
 	
