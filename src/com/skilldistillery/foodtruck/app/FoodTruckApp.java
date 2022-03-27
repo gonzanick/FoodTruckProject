@@ -9,7 +9,6 @@ public class FoodTruckApp {
 		FoodTruckApp fTA = new FoodTruckApp();
 		Scanner sc = new Scanner(System.in);
 		FoodTruck foodTrucks[] = new FoodTruck[5];
-		String userInput;
 
 		System.out.println("Please enter up to five (5) different food trucks.\n"
 				+ "Include the name of the food truck, the food type (int that order), and then a rating from 1-5 .\n"
@@ -58,6 +57,7 @@ public class FoodTruckApp {
 				
 			}
 		}
+		sc.close();
 	}
 
 	public void menu() {
